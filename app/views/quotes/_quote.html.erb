@@ -1,9 +1,9 @@
-<div class="quote bg-slate-300">
-  <%= link_to quote.name, quote_path(quote) %>
-  <div class="quote__actions mb-2">
-    <%= link_to "Delete", quote, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    <%= link_to "Edit",
-                edit_quote_path(quote),
-                class: "btn btn--light" %>
+<div class="quote bg-slate-300 p-4 rounded-lg shadow-md mb-5">
+  <%= link_to quote.name, quote_path(quote), class: "text-lg font-semibold text-blue-600 hover:underline" %>
+
+  <div class="quote__actions mt-2 flex space-x-4">
+    <%= link_to "Delete", quote, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-red-600 hover:text-red-800 font-semibold" %>
+
+    <%= link_to "Edit", edit_quote_path(quote), class: "bg-gray-200 text-gray-700 font-semibold py-1 px-3 rounded-lg hover:bg-gray-300" %>
   </div>
 </div>

@@ -1,10 +1,16 @@
-<%= simple_form_for quote, html: { class: "quote form" } do |f| %>
+<%= simple_form_for quote, html: { class: "space-y-6 bg-white shadow-md rounded-lg p-6" } do |f| %>
   <% if quote.errors.any? %>
-    <div class="error-message">
-      <%= quote.errors.full_messages.to_sentence.capitalize %>
+    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded" role="alert">
+      <p class="font-bold">Oops! Something went wrong:</p>
+      <p><%= quote.errors.full_messages.to_sentence.capitalize %></p>
     </div>
   <% end %>
 
-  <%= f.input :name, input_html: { autofocus: true } %>
-  <%= f.submit class: "btn btn--secondary" %>
+  <div class="form-group">
+    <%= f.input :name, label_html: { class: "block text-gray-700 text-sm font-bold mb-2" }, input_html: { class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", autofocus: true } %>
+  </div>
+
+  <div class="flex justify-end">
+    <%= f.submit "Save Quote", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
 <% end %>
